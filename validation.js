@@ -1,35 +1,35 @@
 function FormValidation() {
 
-    //variables to hold form data
+    //Variables to hold textbox information
     var firstName = document.getElementById("txtFirstName").value;
     var age = document.getElementById("txtAge").value;
     var email = document.getElementById("txtEmail").value;
     var phone = document.getElementById("txtPhone").value;
 
     //Regular expressions for phone number and email validation
-  var phoneNumberExpression = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+    var phoneNumberExpression = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
     var emailExp = /^\w+(\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
 
     //Receive true/false value from methods below
     var nameTest = nameCheck(firstName);
     var ageTest = ageCheck(age);
 
-    //variables to hold checked status of checkboxes
+    //Variables to hold checked status of checkboxes
     var chkMusic = document.getElementById("chk1").checked;
     var chkSports = document.getElementById("chk2").checked;
     var chkReading = document.getElementById("chk3").checked;
     var chkVolunteering = document.getElementById("chk4").checked;
 
-    //variables that will be assigned based on checkbox selected
+    //Variables that will be assigned based on checkbox selected
     var chk1 = "";
     var chk2 = "";
     var chk3 = "";
     var chk4 = "";
 
-    //get value of Radiobutton
+    //Get value of selected radiobutton
     var preferredGenre = document.querySelector('input[name=genre]:checked').value;
 
-    //get value of drop down list
+    //Get value of drop down list
     var ddlist = document.getElementById("colorList");
     var color = ddlist.options[ddlist.selectedIndex].value;
 
@@ -55,7 +55,7 @@ function FormValidation() {
     }
     //End TextBox validation
 
-    //decision logic to determine if user is interested in a certain checkbox
+    //Decision logic to determine which hobbies user is interested in.
     if(chkMusic){
       chk1 = "Music" + "\n";
     }
@@ -83,7 +83,7 @@ function FormValidation() {
     else{
       chk4 = "";
     }
-    //end checkbox logic
+    //End checkbox logic
 
     //Display information collected from the form.
     alert("This is the information you entered: " + "\n" +
@@ -97,11 +97,11 @@ function FormValidation() {
           "Favorite color: " + "\n" + color);
 }
 
-//testing if name contains numbers
+//Testing if name contains numbers
 function nameCheck(name){
   return /\d/.test(name);
 }
-//testing if age contains non-numerics
+//Testing if age contains non-numerics
 function ageCheck(age){
   return /\D/.test(age);
 }
